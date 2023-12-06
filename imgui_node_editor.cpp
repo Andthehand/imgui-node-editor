@@ -2510,7 +2510,8 @@ ed::Control ed::EditorContext::BuildControl(bool allowOffscreen)
     };
 
     // Check for interaction with background.
-    auto backgroundClickButonIndex        = emitInteractiveAreaEx(NodeId(0), editorRect, backgroundExtraFlags);
+	ImGui::SetNextItemAllowOverlap();
+	auto backgroundClickButonIndex        = emitInteractiveAreaEx(NodeId(0), editorRect, backgroundExtraFlags);
     auto backgroundDoubleClickButtonIndex = isMouseDoubleClickOverBackground();
     auto isBackgroundActive               = ImGui::IsItemActive();
     auto isBackgroundHot                  = !hotObject;
